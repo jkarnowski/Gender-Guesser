@@ -1,46 +1,61 @@
 class GuessesController < ApplicationController
   def index
-  	@person = Person.new
+  	@persons = Person.all 
   end
 
   def new
-  	# @person = Person.new
   end
 
   def create
-  	#if guess was correct, save person to database plus gender
-  	# @person = Person.find_by(person_params)
+    temporary_person = Person.new(person_params)
 
-  	if @person = Person.where(:conditions => person_params)?
-  		#increase a counter
-  		@gender = @person.gender
+    height = person_params[:height]
+    weight = person_params[:weight]
 
-  		redirect_to guess_path
+    p height 
+    p 'person inside the CREATE'
+    p temporary_person
+    # p "going into the method........."
 
-  	else
-  		# p "inside the ELSE statement"
-  		@gender = ['male', 'female'].sample
-  		@person = Person.create(person_params, gender: @gender)
-  		
-  		redirect_to root_path
+    # find_gender_for_height_weight
+    temporary_person = Person.where({height: height, weight: weight}).sample
 
-  	end
+    if temporary_person.nil?
+      p "inside the IF"
+      p temporary_person
+      p "*" * 100
+      p params
+      p "*" * 100
+      gender = ["Female", "Male"].sample
+      p "random gender: "
+      p gender 
+      @person = Person.create(weight: params[:weight], height: params[:height], gender: gender)
+      p "inside IF and person is:"
+      @person 
+    else
+      # gender = ["Female", "Male"].sample
+      # gender = "MALESYYYYY"
+      p "inside the ELSE:"
+      p params
+      @person = temporary_person
+    end
 
+    p "our person with GENDER IS:"
+    @person
   end
 
-  # def is_female?
-  # 	@gender = 'female'
-  # end
+  def find_gender_for_height_weight
 
-  # def is_male?
-  # 	@gender = 'male'
-  # end
+    # check_height = person_params[:height]
+    # check_weight = person_params[:weight]
 
+  end
 
   private
   def person_params
-  	params.require(:person).permit(:height, :weight)
+    params.require(:person).permit(:height, :weight)
   end
+
 
 end
 

@@ -4,25 +4,11 @@
 			<h2>Let's Guess Your Gender</h2>
 
 			<%= bootstrap_form_for :person, :url =>url_for(controller: 'guesses', action: 'create'), :html => {:method => :post} do |f| %>
-				<%= f.text_field :height, label: "height", hide_label: true, placeholder: "height in inches" %>
-	  		<%= f.text_field :weight, label: "weight", hide_label: true, placeholder: "weight in pounds" %>
+				<%= f.text_field :height, label: "height", hide_label: true, placeholder: "height in inches", value: "" %>
+	  		<%= f.text_field :weight, label: "weight", hide_label: true, placeholder: "weight in pounds", value: "" %>
 	  		<%= f.submit "Guess My Gender" %>
   		<% end %>
 
 		</div>
-
-		<div class="col-md-12">
-			<% if @person.errors.any? %>
-			<div id="error_explanation">
-				<h2><%= pluralize(@person.errors.count, "error") %> prohibited this post from being saved:</h2>
-				<ul>
-					<% @person.errors.full_messages.each do |msg| %>
-					<li><%= msg %></li>
-					<% end %>
-        </ul>
-      </div>
-      <% end %>
-    </div>
-
 	</div>
 </div>
