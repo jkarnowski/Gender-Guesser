@@ -3,7 +3,7 @@
 		<div class="col-md-12">
 			<h2>Let's Guess Your Gender</h2>
 
-			<%= bootstrap_form_for :person, :url =>url_for(controller: 'guesses', action: 'create'), :html => {:method => :post} do |f| %>
+			<%= bootstrap_form_for :person, :url =>url_for(controller: 'guesses', action: 'new'), :html => {:method => :get} do |f| %>
 			<%= f.text_field :height, label: "height", hide_label: true, placeholder: "height in inches", value: "" %>
 			<%= f.text_field :weight, label: "weight", hide_label: true, placeholder: "weight in pounds", value: "" %>
 			<%= f.submit "Guess My Gender", class: 'clicked' %><br><br>
@@ -11,6 +11,4 @@
 
 		</div>
 	</div>
-
-	<div id="results-of-gender"></div>
 </div>
