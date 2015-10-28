@@ -8,12 +8,19 @@ RSpec.describe GuessesController, type: :controller do
       get :index
       expect(response).to have_http_status(:success)
     end
-  end
 
-  pending "GET #new" do
-  	it "selects a person from the database" do
-
-  	end
+    it 'renders the index template' do
+    	get :index
+    	expect(response).to render_template("index")
+    end
+    
   end
 
 end
+
+
+# new
+# should execute a method
+
+# find_person
+# should return person from database
