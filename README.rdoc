@@ -1,28 +1,36 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+## Guess Gender App
 
 * Ruby version
 
-* System dependencies
+Ruby, 4.0 
+Rails, '4.2.3'
+
+Be sure to run  $ bundle install
 
 * Configuration
 
 * Database creation
 
-* Database initialization
+- database: postgreSQL be sure to have postgresql installed
+- run a migration
+	$ bundle exec db:create
+	$ bundle exec db:migrate
+	$ bundle exec db:seed
+
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+Testing is with rspec-rails 
 
-* Deployment instructions
+##User Story
 
-* ...
+- User enters height in inches and weight in pounds
+- Guessing prediction will return gender, user confirms if the guess was correct or incorrect
 
+###How does it work? 
+- User enters height & weight
+- Check to see if a person with that height & weight exists in the database. Take a random sample from collection
+- Return gender from that sample as guessed gender
+- User confirms if the gender is correct or not
+- Add new person to the database with their height, weight and gender
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
