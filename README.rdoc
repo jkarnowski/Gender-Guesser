@@ -1,13 +1,16 @@
-## Guess Gender App
+##Guess Gender App
 
-* Ruby version
+Guess Gender is a Rails app that takes in height (inches) and weight(lbs) and returns a guess at what your gender might be
 
-Ruby, 4.0 
-Rails, '4.2.3'
+Goal: that it becomes more accurate at guessing a person's gender over time
 
-Be sure to run  $ bundle install
+##System Requirements
+- Ruby, 4.0 
+- Rails, '4.2.3'
 
 * Configuration
+
+$ bundle install
 
 * Database creation
 
@@ -17,14 +20,18 @@ Be sure to run  $ bundle install
 	$ bundle exec db:migrate
 	$ bundle exec db:seed
 
+##RUN the app
+- $ rails s
 
-* How to run the test suite
+- Head to localhost:3000
 
-Testing is with rspec-rails
+##Run the Tests 
 
 $rspec spec/models
 
 $rspec spec/controllers 
+
+
 
 ##User Story
 
