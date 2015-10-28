@@ -2,7 +2,9 @@
 	<div class="row">
 		<div class="col-md-12">
 			<h2>And Your Gender is......</h2>
-			<h4><%= @person.gender %></h4>
+			<h4 id="gender-style"><%= @person.gender %></h4>
+			<h3>Did we guess correctly?</h3>
+			<p>What gender do you most identify with?</p>
 
 			<%= form_for :person, :url =>url_for(controller:'guesses', action: 'create'), :html => {:method => :post} do |f| %>
 			<%= f.hidden_field(:height, :value => @person.height) %>
@@ -13,7 +15,7 @@
 			<%= f.label :gender, 'male' %>
 			<%= f.radio_button :gender, 'male' %>
 			<br>
-			<%= f.submit 'Submit', class: 'confirm-guess' %>
+			<%= f.submit 'Submit', class: 'confirm-guess btn-lg' %>
 			<% end %>
 		</div>
 	</div>
