@@ -8,23 +8,19 @@ class GuessesController < ApplicationController
   end
 
   def find_person
-    person = Person.new(person_params)
-    p person_params
-
-    p "person is:"
-    person 
+    person = Person.new(height: params[:person][:height], weight: params[:person][:weight])
 
     check_height = person.height
     check_weight = person.weight
 
     find_person = Person.where("height = ? AND weight = ?", check_height, check_weight).sample
 
-    if find_person.gender != nil
-      @guessed_gender = find_person.gender
-      @person = Person.new(height: check_height, weight: check_weight, gender: @guessed_gender)
-    else
+    if find_person == nil 
       gender = ["male", "female"].sample
       @person = Person.new(height: check_height, weight: check_weight, gender: gender)
+    else
+      @guessed_gender = find_person.gender
+      @person = Person.new(height: check_height, weight: check_weight, gender: @guessed_gender)
     end
 
     return @person 
@@ -32,12 +28,14 @@ class GuessesController < ApplicationController
   end
 
   def create
+    Person.create(person_params)
+    redirect_to root_path
   end
 
 
-  private
+  # private
   def person_params
-    params.require(:person).permit(:height, :weight)
+    params.require(:person).permit(:height, :weight, :gender)
   end
 
 

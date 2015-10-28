@@ -4,10 +4,14 @@
 $(document).ready(function(){
 	console.log("ready inside guesses")
 
-	// buttonListener();
+	buttonListener();
 })
 
 var buttonListener = function(){
 	console.log("inside the buttonListener")
+
+	$('.confirm-guess').on('click', function(){
+		alert('thanks for playing!');
+	})
 	
 }
