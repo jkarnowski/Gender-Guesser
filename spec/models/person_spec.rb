@@ -1,18 +1,22 @@
+require 'spec_helper'
 require 'rails_helper'
 
 RSpec.describe Person, type: :model do
 
-	let(:person) {Person.new(height: "65", weight: "166")}
-
-	it 'is invalid without a height' do
-
+	before :each do
+		@person = Person.new(height: '65', weight: '155', gender: 'male')
 	end
-	it 'is invalid without weight'
-	it 'includes gender'
+
+	describe 'instantiation' do
+
+		it 'instantiates a person' do
+			expect(@person.height).to eq('65')
+		end
+	end
+
 end
 
-
-
-
-	validates :height, presence: true
-	validates :weight, presence: true
+	# it 'is not valid without weight' do
+	# 	FactoryGirl.build(:person, weight: nil)
+	# 	expect(person).to be_valid
+	# end
