@@ -13,14 +13,19 @@ RSpec.describe GuessesController, type: :controller do
     	get :index
     	expect(response).to render_template("index")
     end
-    
+
   end
+
+  # describe "GET #new" do
+  # 	it 'returns a person with a guessed gender' do
+  # instantiate person object to fake input
+  # execute method
+  # should return a person with a gender
+  # 	end
+  # end
 
 end
 
 
-# new
-# should execute a method
 
-# find_person
-# should return person from database
+# Person.where("height = ? AND weight = ?", check_height, check_weight).sample
