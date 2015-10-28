@@ -33,7 +33,7 @@ class GuessesController < ApplicationController
   end
 
 
-  # private
+  private
   def person_params
     params.require(:person).permit(:height, :weight, :gender)
   end
@@ -42,6 +42,7 @@ class GuessesController < ApplicationController
 end
 
 
+# PSEUDOCODE
 #input
 #height: 65 
 #weight: 145

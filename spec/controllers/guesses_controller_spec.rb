@@ -25,7 +25,3 @@ RSpec.describe GuessesController, type: :controller do
   # end
 
 end
-
-
-
-# Person.where("height = ? AND weight = ?", check_height, check_weight).sample
