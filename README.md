@@ -1,6 +1,6 @@
-##Guess Gender App
+##Gender-Guesser App
 
-Guess Gender is a Rails app that takes in height (inches) and weight(lbs) and returns a guess at what your gender might be
+Gender Guesser is a Rails app that takes in height (inches) and weight(lbs) and returns a guess at what your gender might be
 
 Goal: that it becomes more accurate at guessing a person's gender over time
 
@@ -8,29 +8,28 @@ Goal: that it becomes more accurate at guessing a person's gender over time
 - Ruby, 4.0 
 - Rails, '4.2.3'
 
-* Configuration
+###Configuration
 
-$ bundle install
+'$ bundle install'
 
-* Database creation
+###Database creation
 
 - database: postgreSQL be sure to have postgresql installed
 - run a migration
-	$ bundle exec db:create
-	$ bundle exec db:migrate
-	$ bundle exec db:seed
+	'$ bundle exec db:create'
+	'$ bundle exec db:migrate'
+	'$ bundle exec db:seed'
 
 ##RUN the app
-- $ rails s
+- '$ rails s'
 
 - Head to localhost:3000
 
 ##Run the Tests 
 
-$rspec spec/models
+'$ rspec spec/models'
 
-$rspec spec/controllers 
-
+'$ rspec spec/controllers'
 
 
 ##User Story
