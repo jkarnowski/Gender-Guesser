@@ -20,7 +20,11 @@ Be sure to run  $ bundle install
 
 * How to run the test suite
 
-Testing is with rspec-rails 
+Testing is with rspec-rails
+
+$rspec spec/models
+
+$rspec spec/controllers 
 
 ##User Story
 

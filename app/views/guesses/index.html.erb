@@ -6,7 +6,7 @@
 			<%= bootstrap_form_for :person, :url =>url_for(controller: 'guesses', action: 'new'), :html => {:method => :get} do |f| %>
 			<%= f.text_field :height, label: "height", hide_label: true, placeholder: "height in inches", value: "" %>
 			<%= f.text_field :weight, label: "weight", hide_label: true, placeholder: "weight in pounds", value: "" %>
-			<%= f.submit "Guess My Gender", class: 'clicked' %><br><br>
+			<%= f.submit "Guess My Gender", class: 'clicked btn-lg' %><br><br>
 			<% end %>
 
 		</div>
